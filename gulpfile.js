@@ -12,5 +12,18 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss');
+
+    mix.sass([
+        'foundation.scss',
+        'app.scss'
+    ]);
+
+    mix.scripts([
+        'jquery.js',
+        'foundation.js',
+        'vue.js'
+    ]);
+
+    mix.browserSync({ proxy: 'laravel_vuejs.app:8000' });
+
 });
