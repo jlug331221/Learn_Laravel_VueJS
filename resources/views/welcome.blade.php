@@ -1,29 +1,7 @@
-<!DOCTYPE html>
-<html>
+@extends('master')
 
-    <head>
-        <title>Laravel & VueJS</title>
+@section('content')
 
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
-    </head>
+    @{{ message }}
 
-    <body>
-
-        @{{ message }}
-
-        <script src="{{ asset('js/all.js') }}"></script>
-
-        <script type="text/javascript">
-
-            new Vue({
-                el: 'body',
-                data: {
-                    message: ''
-                }
-            })
-
-        </script>
-
-    </body>
-
-</html>
+@endsection

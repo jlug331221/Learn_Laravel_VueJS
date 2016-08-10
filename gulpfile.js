@@ -21,7 +21,8 @@ elixir(function(mix) {
     mix.scripts([
         'jquery.js',
         'foundation.js',
-        'vue.js'
+        'vue.js',
+        'app.js'
     ]);
 
     mix.browserSync({ proxy: 'laravel_vuejs.app:8000' });
