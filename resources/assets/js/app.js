@@ -1,6 +1,9 @@
+// browserify main entrypoint
+
+var Vue = require('vue');
+
 new Vue({
     el: 'body',
-    data: {
-        message: 'Justin Lugo'
-    }
+
+    data: { message: 'Hello Justin!' }
 })

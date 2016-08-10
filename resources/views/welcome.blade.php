@@ -2,6 +2,8 @@
 
 @section('content')
 
-    <h1>@{{ message }}</h1>
+    <h1>Welcome</h1>
+
+    @{{ message }}
 
 @endsection

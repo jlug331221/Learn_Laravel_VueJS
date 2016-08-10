@@ -1,5 +1,7 @@
 var elixir = require('laravel-elixir');
 
+require('laravel-elixir-vueify');
+
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -14,14 +16,11 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
 
     mix.sass([
-        'spectre.scss',
+        'concise.scss',
         'app.scss'
     ]);
 
-    mix.scripts([
-        'vue.js',
-        'app.js'
-    ]);
+    mix.browserify('app.js');
 
     mix.browserSync({ proxy: 'laravel_vuejs.app:8000' });
 
