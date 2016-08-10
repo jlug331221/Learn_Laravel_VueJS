@@ -14,13 +14,11 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
 
     mix.sass([
-        'foundation.scss',
+        'spectre.scss',
         'app.scss'
     ]);
 
     mix.scripts([
-        'jquery.js',
-        'foundation.js',
         'vue.js',
         'app.js'
     ]);
