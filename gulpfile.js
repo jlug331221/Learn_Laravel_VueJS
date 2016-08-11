@@ -20,7 +20,7 @@ elixir(function(mix) {
         'app.scss'
     ]);
 
-    mix.browserify('app.js');
+    mix.browserify('main.js');
 
     mix.browserSync({ proxy: 'laravel_vuejs.app:8000' });
 

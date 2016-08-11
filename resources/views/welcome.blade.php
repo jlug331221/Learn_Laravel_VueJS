@@ -2,8 +2,12 @@
 
 @section('content')
 
-    <h1>Welcome</h1>
+    <section column="6" id="blogs">
+        <blogs></blogs>
+    </section>
 
-    @{{ message }}
+    <section column="6" id="createBlog">
+
+    </section>
 
 @endsection

@@ -1,0 +1,19 @@
+ul li {
+    line-height: 6em;
+}
+
+.nav {
+    text-align: right;
+}
+
+/* ===== == = === 68.75em (1100px) === = == ===== */
+
+@media only screen and (max-width : 68.75em) {
+    .siteHeader h1 {
+        text-align: center;
+    }
+
+    .nav {
+        text-align: center;
+    }
+}
