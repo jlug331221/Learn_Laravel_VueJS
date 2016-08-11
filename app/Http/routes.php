@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('api/blogs', function() {
+    return App\Blog::latest()->get();
+});
+
 Route::get('/', function () {
     return view('welcome');
 });

@@ -1,6 +1,7 @@
 // browserify main entrypoint
 
 var Vue = require('vue');
+Vue.use(require('vue-resource'));
 
 import Blogs from './components/Blogs.vue';
 

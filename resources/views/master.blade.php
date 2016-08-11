@@ -43,7 +43,7 @@
 
         <footer container class="siteFooter">
             <div row>
-                <h5>This is the footer area</h5>
+                <h6>This is the footer area</h6>
             </div>
         </footer>
 
