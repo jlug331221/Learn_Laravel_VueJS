@@ -11,8 +11,6 @@ new Vue({
 
     components: { Blogs }
 
-    // components: { Blogs },
-    //
     // ready() {
     //     alert('Ready to go!');
     // }

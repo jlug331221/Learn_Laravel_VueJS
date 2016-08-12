@@ -15,6 +15,10 @@ Route::get('api/blogs', function() {
     return App\Blog::latest()->get();
 });
 
+Route::get('api/blog/{id}', function($id) {
+    return App\Blog::find($id);
+});
+
 Route::get('/', function () {
     return view('welcome');
 });

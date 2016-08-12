@@ -11,6 +11,9 @@
         <title>Laravel & VueJS</title>
 
         <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
+
+        <script src="https://use.fontawesome.com/28895756cc.js"></script>
+
     </head>
 
     <body>
@@ -33,7 +36,7 @@
 
         </header>
 
-        <main container class="siteMain">
+        <main container class="siteMain" id="blogs">
 
             <div row>
                 @yield('content')
@@ -42,9 +45,11 @@
         </main>
 
         <footer container class="siteFooter">
+
             <div row>
                 <h6>This is the footer area</h6>
             </div>
+
         </footer>
 
         <script src="{{ asset('js/main.js') }}"></script>

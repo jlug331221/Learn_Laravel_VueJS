@@ -2,12 +2,12 @@
 
 @section('content')
 
-    <section column="6" id="blogs">
+    <section column="6">
         <blogs></blogs>
     </section>
 
-    <section column="6" id="createBlog">
-
+    <section column="6">
+        <!-- <blog></blog> -->
     </section>
 
 @endsection
