@@ -18,39 +18,51 @@
 
     <body>
 
-        <header container class="siteHeader">
+        <div class="main-container" id="blogs">
 
-            <div row>
-                <h1 column="4" class="logo">The CJ-7 Blog</h1>
+            <header container class="siteHeader">
 
-                <nav column="8" class="nav">
-                    <ul class="list--unstyled list--inline">
-                        <li><a href="#">Blogs</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact Me</a></li>
-                    </ul>
-                </nav>
-            </div>
+                <div row>
+                    <h1 column="4" class="logo">The CJ-7 Blog</h1>
 
-            <hr>
+                    <nav column="8" class="nav">
+                        <ul class="list--unstyled list--inline">
+                            <li>
+                                <a v-link="{ path: '/' }">Blogs</a>
+                            </li>
+                            <li>
+                                <a v-link="{ path: 'about' }">About</a>
+                            </li>
+                            <li>
+                                <a v-link="{ path: 'contact' }">Contact Me</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
 
-        </header>
+                <hr>
 
-        <main container class="siteMain" id="blogs">
+            </header>
 
-            <div row>
-                @yield('content')
-            </div>
+            <main container class="siteMain">
 
-        </main>
+                <div column="8 +2">
+                    <router-view>
+                        <div row>
+                            @yield('content')
+                        </div>
+                    </router-view>
+                </div>
 
-        <footer container class="siteFooter">
+            </main>
 
-            <div row>
+            <footer class="siteFooter">
+
                 <h6>This is the footer area</h6>
-            </div>
 
-        </footer>
+            </footer>
+
+        </div> <!-- end of main-container -->
 
         <script src="{{ asset('js/main.js') }}"></script>
 

@@ -1,7 +1,7 @@
 <template lang="html">
 
-    <div class="blogs-container" v-show="! show_single_blog">
-        <h5>Here are my blogs</h5>
+    <div class="blogs-container" v-show="! blog">
+        <h5>All Blogs</h5>
 
         <i class="fa fa-cog fa-spin fa-3x fa-fw loading-cog"
             v-show="loading">
@@ -19,7 +19,7 @@
         </article>
     </div>
 
-    <div class="blog-container" v-show="show_single_blog">
+    <div class="blog-container" v-show="blog">
         <h5>Here is a detailed look of Blog #{{ blog.id }}:</h5>
 
         <i class="fa fa-cog fa-spin fa-3x fa-fw loading-cog"
@@ -33,7 +33,9 @@
             </div>
 
             <div class="card-footer">
-                <a v-on:click="fetchBlogsList()">Back to blogs...</a>
+                <button class="button--xsm button--pill" v-on:click="fetchBlogsList()">
+                    Back to blogs
+                </button>
             </div>
         </article>
     </div>
@@ -44,11 +46,9 @@
 
     export default {
 
-        data: function () {
+        data() {
             return {
                 loading: false,
-
-                show_single_blog: false,
 
                 blogs_list: [],
 
@@ -56,19 +56,19 @@
             };
         },
 
-        created: function() {
+        created() {
             this.fetchBlogsList();
         },
 
         computed: {},
 
-        ready: function () {},
+        ready() {},
 
-        attached: function () {},
+        attached() {},
 
         methods: {
 
-            fetchBlogsList: function() {
+            fetchBlogsList() {
                 var vm = this;
                 vm.loading = true;
                 vm.blog = '';
@@ -76,7 +76,6 @@
                     .then((blogs) => {
                         // successful AJAX request
                         vm.$set('loading', false);
-                        vm.$set('show_single_blog', false);
                         vm.$set('blogs_list', blogs.json());
                     })
                     .then((error) => {
@@ -87,7 +86,7 @@
             fetchBlog(blogID) {
                 var vm = this;
                 vm.loading = true;
-                vm.show_single_blog = true;
+                vm.blogs_list = [];
                 vm.$http.get('api/blog/' + blogID)
                     .then((blog) => {
                         vm.$set('loading', false);
