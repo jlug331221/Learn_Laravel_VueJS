@@ -7,14 +7,21 @@ var VueRouter = require('vue-router');
 Vue.use(VueRouter);
 
 import Blogs from './components/Blogs.vue';
+import Blog from './components/Blog.vue';
 
 // Setup vue-router
 var router = new VueRouter();
 
+// Setup router maps
 router.map({
 
     '/': {
         component: Blogs
+    },
+
+    'blog/:blogID': {
+        name: 'blog',
+        component: Blog
     },
 
     '/about': {

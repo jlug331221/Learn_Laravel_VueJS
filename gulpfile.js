@@ -15,7 +15,10 @@ require('laravel-elixir-vueify');
 
 elixir(function(mix) {
 
+    mix.copy('resources/assets/fonts', 'public/fonts');
+
     mix.sass([
+        'font-awesome.scss',
         'concise.scss',
         'app.scss'
     ]);

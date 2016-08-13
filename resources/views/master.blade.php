@@ -12,13 +12,13 @@
 
         <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 
-        <script src="https://use.fontawesome.com/28895756cc.js"></script>
+        {{-- <script src="https://use.fontawesome.com/28895756cc.js"></script> --}}
 
     </head>
 
     <body>
 
-        <div class="main-container" id="blogs">
+        <div class="main-parent-container" id="blogs">
 
             <header container class="siteHeader">
 
@@ -31,10 +31,10 @@
                                 <a v-link="{ path: '/' }">Blogs</a>
                             </li>
                             <li>
-                                <a v-link="{ path: 'about' }">About</a>
+                                <a v-link="{ path: '/about' }">About</a>
                             </li>
                             <li>
-                                <a v-link="{ path: 'contact' }">Contact Me</a>
+                                <a v-link="{ path: '/contact' }">Contact Me</a>
                             </li>
                         </ul>
                     </nav>
@@ -46,7 +46,7 @@
 
             <main container class="siteMain">
 
-                <div column="8 +2">
+                <div column="6 +3">
                     <router-view>
                         <div row>
                             @yield('content')

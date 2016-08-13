@@ -1,41 +1,20 @@
 <template lang="html">
 
-    <div class="blogs-container" v-show="! blog">
+    <div class="blogs-container">
         <h5>All Blogs</h5>
 
         <i class="fa fa-cog fa-spin fa-3x fa-fw loading-cog"
             v-show="loading">
         </i>
 
-        <article class="card" v-for="blog in blogs_list">
+        <article class="card" v-for="blog in blogs_list" v-show="blogs_list">
             <div class="card-content">
                 <span class="card-title"><h6>{{ blog.title }}</h6></span>
                 <p>{{ blog.content }}</p>
             </div>
 
             <div class="card-footer">
-                <a v-on:click="fetchBlog(blog.id)">Read More...</a>
-            </div>
-        </article>
-    </div>
-
-    <div class="blog-container" v-show="blog">
-        <h5>Here is a detailed look of Blog #{{ blog.id }}:</h5>
-
-        <i class="fa fa-cog fa-spin fa-3x fa-fw loading-cog"
-            v-show="loading">
-        </i>
-
-        <article class="card" >
-            <div class="card-content">
-                <span class="card-title"><h6>{{ blog.title }}</h6></span>
-                <p>{{ blog.content }}</p>
-            </div>
-
-            <div class="card-footer">
-                <button class="button--xsm button--pill" v-on:click="fetchBlogsList()">
-                    Back to blogs
-                </button>
+                <a v-link="{ name: 'blog', params: { blogID: blog.id } }">Read More...</a>
             </div>
         </article>
     </div>
@@ -50,9 +29,7 @@
             return {
                 loading: false,
 
-                blogs_list: [],
-
-                blog: ''
+                blogs_list: []
             };
         },
 
@@ -82,20 +59,6 @@
                         // handle error
                     });
             },
-
-            fetchBlog(blogID) {
-                var vm = this;
-                vm.loading = true;
-                vm.blogs_list = [];
-                vm.$http.get('api/blog/' + blogID)
-                    .then((blog) => {
-                        vm.$set('loading', false);
-                        vm.$set('blog', blog.json());
-                    })
-                    .then((error) => {
-
-                    });
-            }
 
         },
 
