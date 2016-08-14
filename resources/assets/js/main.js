@@ -8,6 +8,7 @@ Vue.use(VueRouter);
 
 import Blogs from './components/Blogs.vue';
 import Blog from './components/Blog.vue';
+import CreateBlog from './components/CreateBlog.vue';
 
 // Setup vue-router
 var router = new VueRouter();
@@ -22,6 +23,10 @@ router.map({
     'blog/:blogID': {
         name: 'blog',
         component: Blog
+    },
+
+    '/create-blog': {
+        component: CreateBlog
     },
 
     '/about': {

@@ -31,6 +31,11 @@
                                 <a v-link="{ path: '/' }">Blogs</a>
                             </li>
                             <li>
+                                <a v-link="{ path: '/create-blog' }">
+                                    Create Blog
+                                </a>
+                            </li>
+                            <li>
                                 <a v-link="{ path: '/about' }">About</a>
                             </li>
                             <li>
