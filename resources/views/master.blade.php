@@ -47,11 +47,9 @@
             <main container class="siteMain">
 
                 <div column="6 +3">
-                    <router-view>
-                        <div row>
-                            @yield('content')
-                        </div>
-                    </router-view>
+                    <div row>
+                        <router-view></router-view>
+                    </row>
                 </div>
 
             </main>
@@ -62,7 +60,7 @@
 
             </footer>
 
-        </div> <!-- end of main-container -->
+        </div> <!-- end of main-parent-container -->
 
         <script src="{{ asset('js/main.js') }}"></script>
 
