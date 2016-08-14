@@ -10,6 +10,8 @@ import Blogs from './components/Blogs.vue';
 import Blog from './components/Blog.vue';
 import CreateBlog from './components/CreateBlog.vue';
 
+Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('value');
+
 // Setup vue-router
 var router = new VueRouter();
 
@@ -53,4 +55,4 @@ var App = Vue.extend({});
 //
 // });
 
-router.start(App, '#blogs');
+router.start(App, '#app');

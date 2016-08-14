@@ -24,25 +24,25 @@
 
     export default {
 
-          data() {
+        data() {
             return {
                 loadingBlogAnimation: false,
 
                 blog: ''
             };
-          },
+        },
 
-          created() {
-              this.fetchBlog();
-          },
+        created() {
+          this.fetchBlog();
+        },
 
-          computed: {},
+        computed: {},
 
-          ready() {},
+        ready() {},
 
-          attached() {},
+        attached() {},
 
-          methods: {
+        methods: {
 
             fetchBlog() {
                 var vm = this;
@@ -59,9 +59,9 @@
                     });
             }
 
-          },
+        },
 
-          components: {}
+        components: {}
 
         };
 

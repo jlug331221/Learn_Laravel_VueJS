@@ -8,17 +8,17 @@
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
 
+        <meta id="token" name="token" value="{{ csrf_token() }}" />
+
         <title>Laravel & VueJS</title>
 
         <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
-
-        {{-- <script src="https://use.fontawesome.com/28895756cc.js"></script> --}}
 
     </head>
 
     <body>
 
-        <div class="main-parent-container" id="blogs">
+        <div class="main-parent-container" id="app">
 
             <header container class="siteHeader">
 

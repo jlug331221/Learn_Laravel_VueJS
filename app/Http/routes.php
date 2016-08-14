@@ -19,6 +19,11 @@ Route::get('api/blog/{id}', function($id) {
     return App\Blog::find($id);
 });
 
+Route::post('api/createBlog', function() {
+    // Need some backend validation but this is fine for now.
+    App\Blog::create(Request::all());
+});
+
 Route::get('/', function () {
     return view('master');
 });
