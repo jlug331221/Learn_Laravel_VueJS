@@ -54,8 +54,7 @@
                         // successful AJAX request
                         vm.$set('loadingBlogsAnimation', false);
                         vm.$set('blogs_list', blogs.json());
-                    })
-                    .then((error) => {
+                    }, (error) => {
                         // handle error
                     });
             }

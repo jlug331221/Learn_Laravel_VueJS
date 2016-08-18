@@ -82,8 +82,7 @@ export default {
                 vm.blogData.title = '';
                 vm.blogData.content = '';
                 vm.blogCreated = true;
-            })
-            .then((error) => {
+            }, (error) => {
                 // Handle error
             });
         }

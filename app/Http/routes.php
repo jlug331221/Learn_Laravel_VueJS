@@ -16,7 +16,7 @@ Route::get('api/blogs', function() {
 });
 
 Route::get('api/blog/{id}', function($id) {
-    return App\Blog::find($id);
+    return App\Blog::findOrFail($id);
 });
 
 Route::post('api/createBlog', function() {

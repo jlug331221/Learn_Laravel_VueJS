@@ -18,6 +18,12 @@
         </article>
     </div>
 
+    <div class="alert alert--error" v-show="cannotFindBlog" transition="fade">
+        <a @click="cannotFindBlog = false" class="alert-close">&times;</a>
+
+        <p><strong>Error: Cannot find blog</strong></p>
+    </div>
+
 </template>
 
 <script>
@@ -27,6 +33,8 @@
         data() {
             return {
                 loadingBlogAnimation: false,
+
+                cannotFindBlog: false,
 
                 blog: ''
             };
@@ -53,9 +61,9 @@
                     .then((blog) => {
                         vm.$set('loadingBlogAnimation', false);
                         vm.$set('blog', blog.json());
-                    })
-                    .then((error) => {
-
+                    }, (error) => {
+                        vm.$set('loadingBlogAnimation', false);
+                        vm.$set('cannotFindBlog', true);
                     });
             }
 
@@ -75,6 +83,19 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .fade-transition {
+        transition: all 2s ease;
+    }
+
+    .fade-enter, .fade-leave {
+        opacity: 0;
+    }
+
+    .required {
+        font-weight: 900;
+        color: red;
     }
 
 </style>
